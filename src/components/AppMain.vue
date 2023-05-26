@@ -70,60 +70,66 @@ export default {
         <input v-model="testo" type="text" @keyup="change()" placeholder="Cerca">
       </div>
       <div class="col-12 bg-danger my-2">
-        <h2>LISTA FILM</h2>
+        <h4>LISTA FILM</h4>
       </div>
       <!--section film-->
       <div class="col-12 d-flex flex-wrap justify-content-around">
+        <!--inizio ciclo per schede-->
         <template v-for="oggetto in store.ArrayFilm.results">
-
-          <div class="col-3 m-2 p-2">
-            <div class="my-wh">
+          <div class="col-3 m-2 position-relative border border-light">
+            <!--sezione immagine-->
+            <div class="my-card position-absolute d-block">
               <img :src=getImagForNull(oggetto) alt="">
             </div>
-            <div class="my-wh">
+            <!--sezione testo-->
+            <div
+              class="my-card position-absolute bg-black d-flex flex-column align-items-center justify-content-center text-center d-none">
               <p>Titolo:</p>
-              <span>{{ oggetto.title }}</span>
+              <small>{{ oggetto.title }}</small>
               <!--<p>Titolo originale: {{ oggetto.original_title }}</p> -->
-
               <p>Lingua:</p>
               <span :class="getFlag(oggetto.original_language)"></span>
-
-              <p>Voto:</p>
-              <span v-for="voto in getStar(oggetto.vote_average)">
-                <i class="fa-solid fa-star"></i>
-              </span>
-
+              <div class="d-flex mt-2">
+                <p>Voto:</p>
+                <!--mini ciclo per stelle-->
+                <span v-for="voto in getStar(oggetto.vote_average)">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+              </div>
             </div>
-
           </div>
         </template>
       </div>
 
 
       <div class="col-12 bg-danger my-2">
-        <h2>LISTA TELEFILM</h2>
+        <h4>LISTA TELEFILM</h4>
       </div>
       <!--section telefilm-->
       <div class="col-12 d-flex flex-wrap justify-content-around">
+        <!--inizio ciclo per schede-->
         <template v-for="oggetto in store.ArraySerie.results">
-
-          <div class="col-3 m-2 p-2">
-            <div class="my-wh">
+          <div class="col-3 m-2 position-relative border border-light">
+            <!--sezione immagine-->
+            <div class="my-card position-absolute d-block">
               <img :src=getImagForNull(oggetto) alt="">
             </div>
-            <div class="my-wh">
+            <!--sezione testo-->
+            <div
+              class="my-card position-absolute bg-black d-flex flex-column align-items-center justify-content-center text-center d-none">
               <p>Titolo:</p>
-              <span>{{ oggetto.name }} </span>
+              <small>{{ oggetto.name }} </small>
               <!--<p>Titolo originale: {{ oggetto.original_name }}</p>-->
               <p>Lingua:</p>
               <span :class="getFlag(oggetto.original_language)"></span>
-              <p>Voto:</p>
-              <span v-for="voto in getStar(oggetto.vote_average)">
-                <i class="fa-solid fa-star"></i>
-              </span>
-
+              <div class="d-flex mt-2">
+                <p>Voto:</p>
+                <!--mini ciclo per stelle-->
+                <p v-for="voto in getStar(oggetto.vote_average)">
+                  <i class="fa-solid fa-star"></i>
+                </p>
+              </div>
             </div>
-
           </div>
         </template>
       </div>
@@ -134,15 +140,29 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.my-wh {
-  height: 350px;
-}
+div.col-3 {
+  height: 400px;
 
-.flag {
-  width: 20px;
-}
+  &:hover {
 
-img {
-  width: 100%;
+    div.d-block {
+      display: none !important;
+      ;
+    }
+
+    div.d-none {
+      display: flex !important;
+    }
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  img,
+  .my-card {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

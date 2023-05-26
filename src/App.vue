@@ -1,10 +1,10 @@
 <script>
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
-import  "/node_modules/flag-icons/css/flag-icons.min.css" ;
-export default{
+
+export default {
   name: "App",
-  components:{
+  components: {
     AppHeader,
     AppMain
   }
@@ -13,11 +13,8 @@ export default{
 </script>
 
 <template>
-  <AppHeader/>
-  <AppMain/>
-  
+  <AppHeader />
+  <AppMain />
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

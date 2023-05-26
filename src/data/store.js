@@ -2,7 +2,6 @@ import { reactive } from "vue";
 
 export const store = reactive({
   loading: true,
-  img: "https://www.bed-and-breakfast.it/img/tipologie-viaggio/mare/slider/elba.jpg",
   ArraySerie: [],
   ArrayFilm: [],
   MyKey: "api_key=1847c7cbe402614342fdc15b9be4bd97",
