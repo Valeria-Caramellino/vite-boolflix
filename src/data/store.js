@@ -2,10 +2,14 @@ import { reactive } from "vue";
 
 export const store = reactive({
   loading: true,
-  Array: [],
+  img: "https://www.bed-and-breakfast.it/img/tipologie-viaggio/mare/slider/elba.jpg",
+  ArraySerie: [],
+  ArrayFilm: [],
   MyKey: "api_key=1847c7cbe402614342fdc15b9be4bd97",
-  linkSenzaAll:
+  ApiFilm:
     "https://api.themoviedb.org/3/search/movie?api_key=1847c7cbe402614342fdc15b9be4bd97&query=",
-  link: "https://api.themoviedb.org/3/search/movie?api_key=1847c7cbe402614342fdc15b9be4bd97&query=all",
+
   inizioImmagine: "https://image.tmdb.org/t/p/w342",
+  ApiSerie:
+    "https://api.themoviedb.org/3/search/tv?api_key=1847c7cbe402614342fdc15b9be4bd97&query=",
 });
