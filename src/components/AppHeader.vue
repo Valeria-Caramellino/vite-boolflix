@@ -1,8 +1,12 @@
 <script>
-
-export default{
+import { store } from '../data/store';
+export default {
     nome: 'AppHeader',
-    
+    data() {
+        return {
+            store,
+        }
+    }
 }
 
 </script>
@@ -17,14 +21,11 @@ export default{
             </div>
 
         </div>
-       
-    </header>
 
+    </header>
 </template>
 <style lang="scss" scoped>
-
-    h1{
-        color: red;
-    }
-
+h1 {
+    color: red;
+}
 </style>
