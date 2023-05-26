@@ -16,8 +16,8 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-12 d-flex justify-content-between">
-                    <div class="col-7 d-flex align-items-center">
-                        <h1 class="m-2">BOOLFLIX</h1>
+                    <div class="col-7 d-flex align-items-center my-2">
+                        <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png" alt="">
                         <div class="mx-1 text-secondary"><span>Home</span> </div>
                         <div class="mx-1 text-secondary"><span>SerieTv</span> </div>
                         <div class="mx-1 text-secondary"><span>Film</span> </div>
@@ -25,7 +25,7 @@ export default {
                         <div class="mx-1 text-secondary"><span>Aggiunti di recente</span></div>
                         <div class="mx-1 text-secondary"><span>Mia lista</span> </div>
                     </div>
-                    <div class="col-4 d-flex align-items-center justify-content-end">
+                    <div class="col-4 d-flex align-items-center justify-content-end my-2">
                         <div class="mx-2"><i class="fa-solid fa-magnifying-glass"></i></div>
                         <div class="mx-2 text-secondary"> <span>BAMBINI</span></div>
                         <div class="mx-2"><i class="fa-solid fa-bell"></i></div>
@@ -42,25 +42,37 @@ export default {
 </template>
 <style lang="scss" scoped>
 header {
+    div.col-7 {
+        h1 {
+            color: red;
+            font-weight: 800;
+        }
 
-    h1 {
-        color: red;
-        font-weight: 800;
-    }
+        img {
+            height: 70px;
 
-    img {
-        height: 50px;
-
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.1);
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
         }
     }
 
-    i {
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.1);
+    div.col-4 {
+        img {
+            height: 50px;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        i {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
         }
     }
 
