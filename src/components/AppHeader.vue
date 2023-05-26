@@ -50,6 +50,18 @@ header {
 
     img {
         height: 50px;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    i {
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
 
     span {
