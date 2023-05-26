@@ -50,6 +50,11 @@ export default {
         return this.store.inizioImmagine + oggetto.poster_path;
       }
     },
+    /**metodo per stelline */
+    getStar(vote) {
+
+      return Math.floor(vote / 2);
+    },
   },
   mounted() {
   },
@@ -72,10 +77,10 @@ export default {
         <template v-for="oggetto in store.ArrayFilm.results">
 
           <div class="col-3 m-2 p-2">
-            <div>
+            <div class="my-wh">
               <img :src=getImagForNull(oggetto) alt="">
             </div>
-            <div>
+            <div class="my-wh">
               <p>Titolo:</p>
               <span>{{ oggetto.title }}</span>
               <!--<p>Titolo originale: {{ oggetto.original_title }}</p> -->
@@ -84,7 +89,10 @@ export default {
               <span :class="getFlag(oggetto.original_language)"></span>
 
               <p>Voto:</p>
-              <span>{{ oggetto.vote_average }}</span>
+              <span v-for="voto in getStar(oggetto.vote_average)">
+                <i class="fa-solid fa-star"></i>
+              </span>
+
             </div>
 
           </div>
@@ -100,17 +108,20 @@ export default {
         <template v-for="oggetto in store.ArraySerie.results">
 
           <div class="col-3 m-2 p-2">
-            <div>
+            <div class="my-wh">
               <img :src=getImagForNull(oggetto) alt="">
             </div>
-            <div>
+            <div class="my-wh">
               <p>Titolo:</p>
               <span>{{ oggetto.name }} </span>
               <!--<p>Titolo originale: {{ oggetto.original_name }}</p>-->
               <p>Lingua:</p>
               <span :class="getFlag(oggetto.original_language)"></span>
               <p>Voto:</p>
-              <span>{{ oggetto.vote_average }}</span>
+              <span v-for="voto in getStar(oggetto.vote_average)">
+                <i class="fa-solid fa-star"></i>
+              </span>
+
             </div>
 
           </div>
@@ -123,6 +134,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.my-wh {
+  height: 350px;
+}
+
 .flag {
   width: 20px;
 }
