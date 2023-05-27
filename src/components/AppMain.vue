@@ -30,10 +30,12 @@ export default {
       axios.get(indirizzoFilm).then(oggetto => {
         this.store.ArrayFilm = [];
         this.store.ArrayFilm = oggetto.data;
+        console.log(this.store.ArrayFilm, "film")
       });
       axios.get(indirizzoSerie).then(oggetto => {
         this.store.ArraySerie = [];
         this.store.ArraySerie = oggetto.data;
+        console.log(this.store.ArraySerie, "serie")
       });
 
     },
@@ -96,6 +98,13 @@ export default {
                   <i class="fa-solid fa-star"></i>
                 </span>
               </div>
+              <!--overview-->
+              <div>
+                <p>Descrizione:</p>
+                <!--<span>{{ oggetto.overview }}</span>-->
+              </div>
+
+
             </div>
           </div>
         </template>
@@ -129,6 +138,11 @@ export default {
                   <i class="fa-solid fa-star"></i>
                 </p>
               </div>
+              <div>
+                <p>Descrizione:</p>
+                <!--<span>{{ oggetto.overview }}</span>-->
+              </div>
+
             </div>
           </div>
         </template>
@@ -158,11 +172,11 @@ div.col-3 {
   img {
     object-fit: cover;
   }
+}
 
-  img,
-  .my-card {
-    width: 100%;
-    height: 100%;
-  }
+img,
+.my-card {
+  width: 100%;
+  height: 100%;
 }
 </style>
