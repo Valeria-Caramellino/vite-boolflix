@@ -1,12 +1,7 @@
 <script>
-import { store } from '../data/store';
+
 export default {
     nome: 'AppHeader',
-    data() {
-        return {
-            store,
-        }
-    }
 }
 
 </script>
