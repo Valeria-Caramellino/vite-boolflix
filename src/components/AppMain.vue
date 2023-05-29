@@ -101,7 +101,7 @@ export default {
               <!--overview-->
               <div>
                 <p>Descrizione:</p>
-                <!--<span>{{ oggetto.overview }}</span>-->
+                <p class="tronca">{{ oggetto.overview }}</p>
               </div>
 
 
@@ -140,7 +140,7 @@ export default {
               </div>
               <div>
                 <p>Descrizione:</p>
-                <!--<span>{{ oggetto.overview }}</span>-->
+                <p class="tronca">{{ oggetto.overview }}</p>
               </div>
 
             </div>
@@ -166,6 +166,13 @@ div.col-3 {
 
     div.d-none {
       display: flex !important;
+    }
+
+    .tronca {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 250px;
     }
   }
 
