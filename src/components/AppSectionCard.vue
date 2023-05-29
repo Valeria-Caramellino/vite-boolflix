@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <!-----------------------------------film-------------------------->
+    <!-----------------------------------film e serie-------------------------->
     <div class="col-3 m-2 position-relative border border-light">
         <!--sezione immagine-->
         <div class="my-card position-absolute d-block">
