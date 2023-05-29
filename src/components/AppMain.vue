@@ -25,6 +25,7 @@ export default {
       this.getApi(indirizzoFilm, indirizzoSerie)
     },
     /**metodo per generare axios in base a quello che mi serve */
+
     getApi(indirizzoFilm, indirizzoSerie) {
 
       axios.get(indirizzoFilm).then(oggetto => {

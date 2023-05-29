@@ -15,10 +15,17 @@ export default {
     methods: {
         /**metodo per le bandiere */
         getFlag(nazione) {
+            if (this.store.ForFlag[nazione] == undefined) {
+                return `fi fi-${this.store.ForFlag.it}`
+
+            }
             return `fi fi-${this.store.ForFlag[nazione]}`
         }
 
     },
+    mounted() {
+        console.log(this.store.ForFlag.aa)
+    }
 }
 
 </script>
